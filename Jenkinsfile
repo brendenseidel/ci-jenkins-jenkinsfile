@@ -17,11 +17,11 @@ pipeline {
                 sh 'java -jar junit-platform-console-standalone-1.4.0.jar --class-path target --scan-class-path --reports-dir=target/surefire-reports/'
             }
         }
-        post {
-            always {
-                // Report test results
-                junit 'target/surefire-reports/*.xml'
-            }
+    }
+    post {
+        always {
+            // Report test results
+            junit 'target/surefire-reports/*.xml'
         }
     }
 }
